@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.naruto</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../parent</relativePath>
+    </parent>
+
+    <artifactId>tools</artifactId>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+    <description>公共模块</description>
+
+    <modules>
+        <module>tools-common</module>
+        <module>tools-core</module>
+        <module>tools-databases</module>
+        <module>tools-log</module>
+        <module>tools-swagger2</module>
+        <module>tools-user</module>
+        <module>tools-validator</module>
+        <module>tools-jwt</module>
+        <module>tools-dozer</module>
+        <module>tools-xss</module>
+        <module>tools-j2cache</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.naruto</groupId>
+                <artifactId>tools-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.naruto</groupId>
+                <artifactId>tools-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.naruto</groupId>
+                <artifactId>tools-databases</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

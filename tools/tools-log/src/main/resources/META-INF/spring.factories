@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.naruto.auth.log.LogAutoConfiguration
+org.springframework.context.ApplicationContextInitializer=\
+    com.naruto.auth.log.init.ApplicationLoggerInitializer
