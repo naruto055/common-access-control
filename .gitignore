@@ -24,3 +24,17 @@ hs_err_pid*
 replay_pid*
 
 .idea
+/apps/gateway/target/
+/apps/user-auth/auth-entity/target/
+/apps/user-auth/auth-server/target/
+/tools/tools-common/target/
+/tools/tools-core/target/
+/tools/tools-databases/target/
+/tools/tools-dozer/target/
+/tools/tools-j2cache/target/
+/tools/tools-jwt/target/
+/tools/tools-log/target/
+/tools/tools-swagger2/target/
+/tools/tools-user/target/
+/tools/tools-validator/target/
+/tools/tools-xss/target/
