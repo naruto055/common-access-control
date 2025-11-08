@@ -72,7 +72,7 @@ public class SwaggerProperties {
     /**
      * swagger会解析的包路径
      **/
-    private String basePackage = "com.itheima.pinda";
+    private String basePackage = "com.naruto.pinda";
 
     /**
      * swagger会解析的url规则
