@@ -5,6 +5,7 @@ import cn.hutool.core.util.StrUtil;
 import com.naruto.auth.base.BaseController;
 import com.naruto.auth.base.R;
 import com.naruto.auth.exception.BizException;
+import com.naruto.auth.log.annotation.SysLog;
 import com.naruto.pinda.authority.biz.service.auth.ValidateCodeService;
 import com.naruto.pinda.authority.biz.service.auth.impl.AuthManager;
 import com.naruto.pinda.authority.dto.auth.LoginDTO;
@@ -37,6 +38,7 @@ public class LoginController extends BaseController {
 
     @GetMapping(value = "/captcha", produces = "image/png")
     @ApiOperation(notes = "验证码", value = "验证码")
+    @SysLog(value = "生成验证码")
     public void captcha(@RequestParam String key, HttpServletResponse response) throws IOException {
         if (StrUtil.isBlank(key)) throw BizException.validFail("验证码key不能为空");
 
@@ -51,6 +53,7 @@ public class LoginController extends BaseController {
      */
     @PostMapping("/login")
     @ApiOperation(notes = "登录", value = "登录")
+    @SysLog(value = "用户登录")
     public R<LoginDTO> login(@RequestBody @Validated LoginParamDTO loginParamDTO) {
         // 校验验证码
         boolean check = validateCodeService.check(loginParamDTO.getKey(), loginParamDTO.getCode());
@@ -73,6 +76,7 @@ public class LoginController extends BaseController {
      */
     @PostMapping("/check")
     @ApiOperation(notes = "校验验证码", value = "校验验证码")
+    @SysLog(value = "校验用户输入验证码")
     public R<Boolean> check(@RequestBody LoginParamDTO loginParamDTO) {
         boolean check = validateCodeService.check(loginParamDTO.getKey(), loginParamDTO.getCode());
         return R.success(check);
