@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 public abstract class BaseFilter extends ZuulFilter {
 
     @Value("${server.servlet.context-path}")
-    private String zuulPrefix;
+    protected String zuulPrefix;
 
     /**
      * 判断当前请求uri是否需要忽略（直接放行）
